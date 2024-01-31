@@ -51,8 +51,12 @@ jobs:
         uses: actions/download-artifact@v3.0.2
         with:
           name: ExportedArmTemplate # (5) Artifact name 
-
-
+          
+      - name: View GitHub Workspace
+        run: |
+          echo "Contents of GitHub Workspace:"
+          ls -R ${{ github.workspace }}
+      
       - name: Login via Az module
         uses: azure/login@v1
         with:
