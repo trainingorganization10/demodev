@@ -3,10 +3,10 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "factoryName": {
-            "value": "devdatafatorydemodev"
+            "value": "qadatafatorydemoqa"
         },
-        "demodevstr_linkedservice_connectionString": {
-            "value": ""
+        "demoqastr_linkedservice_connectionString": {
+            "value": "DefaultEndpointsProtocol=https;AccountName=qastoragedemoqa;AccountKey=ENiLC2esjArQTsGAQ/+7/3PSO3S3vKEV5qgS4M6kvDjtYUTaiS8XbHxGbMHVk5ztp3hVRMBZQ/yJ+ASt/9Y1ig==;EndpointSuffix=core.windows.net"
         }
     }
 }
