@@ -76,9 +76,9 @@ jobs:
 
 
   manual_release:
-    needs: {build,release}
+    needs: [build,release]
     runs-on: ubuntu-latest
-    if: github.event_name == 'workflow_run' and github.event.workflow_run.event == 'manual'
+    if: github.event_name == 'workflow_run' && github.event.workflow_run.event == 'manual'
     steps:
       - name: Manual Release step
         run: echo " This is a manual release_job"
