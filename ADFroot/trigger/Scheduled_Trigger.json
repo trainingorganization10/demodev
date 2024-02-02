@@ -1,5 +1,5 @@
 {
-	"name": "trigger1",
+	"name": "Scheduled_Trigger",
 	"properties": {
 		"annotations": [],
 		"runtimeState": "Stopped",
