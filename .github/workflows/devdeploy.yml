@@ -13,7 +13,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
       - name: Set up Azure Datafactory CLI
-        uses: Azure/datafactory-v2@v1
+        uses: Azure/data-factory-v2@v1
         with:
           azure_subscription_id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           azure_resource_group: ${{ secrets.DEVRESOURCEGROUP }}
