@@ -47,12 +47,6 @@
 				]
 			}
 		],
-		"parameters": {
-			"storage_connection": {
-				"type": "string",
-				"defaultValue": "DefaultEndpointsProtocol=https;AccountName=devstoragedemodev;AccountKey=cQglM4Wu6/tMaR26NwoebtZEgFchAkzn7MIbaVLXPA2Y+dye40vrVU46tKS31F+tKiIs9nSUrh47+AStDO79fA==;EndpointSuffix=core.windows.net"
-			}
-		},
 		"annotations": [],
 		"lastPublishTime": "2024-01-31T05:06:57Z"
 	},
