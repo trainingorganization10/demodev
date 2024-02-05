@@ -1,0 +1,26 @@
+name: Dev ADF
+
+on: 
+  pull_request:
+    branches:
+      - dev
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Set up Azure Datafactory CLI
+        uses: Azure/datafactory-v2@1
+        with:
+          azure_subscription_id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          azure_resource_group: ${{ secrets.DEVRESOURCEGROUP }}
+          azure_data_factory: ${{ secrets.DEVADF }}
+          azure_client_id: ${{ secrets.AZURE_CLIENT_ID }}
+          azure_tenant_id: ${{ secrets.AZURE_TENANT_ID }}
+
+      - name: Deploy changes to dev data factory
+        run: |
+          azdatafactory datafactory publish --destination-data-factory ${{ secrets.DEVADF }} --branch dev
