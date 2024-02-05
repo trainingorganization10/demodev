@@ -18,6 +18,9 @@
 				"interval": 10,
 				"startTime": "2024-02-05T13:00:00",
 				"endTime": "2024-02-05T13:50:00",
+
+				"endTime": "2024-02-05T13:40:00",
+
 				"timeZone": "India Standard Time"
 			}
 		}
