@@ -53,7 +53,7 @@ jobs:
         id: export
         uses: Azure/data-factory-export-action@v1.2.0
         with:
-          path: ${{github.workspace}}/ADFroot/
+          path: ${{github.workspace}}/
           id: /subscriptions/${{ secrets.AZURE_SUBSCRIPTION_ID }}/resourceGroups/${{ secrets.DEVRESOURCEGROUP }}/providers/Microsoft.DataFactory/factories/dataFactory
 
       - name: Publish ARM template
