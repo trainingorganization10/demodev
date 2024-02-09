@@ -49,19 +49,7 @@ jobs:
         #uses: actions/download-artifact@v3.0.2
         #with:
           #name: ExportedArmTemplate # (5) Artifact name 
-      - name: Export ARM Template
-        id: export
-        uses: Azure/data-factory-export-action@v1.2.0
-        with:
-          path: ${{github.workspace}}/
-          id: /subscriptions/${{ secrets.AZURE_SUBSCRIPTION_ID }}/resourceGroups/${{ secrets.DEVRESOURCEGROUP }}/providers/Microsoft.DataFactory/factories/dataFactory
-
-      - name: Publish ARM template
-        uses: actions/upload-artifact@v2
-        with:
-          name: my-artifact
-          path: ${{ steps.export.outputs${{github.workspace}}/ }}
-          if-no-files-found: error
+     
           
       - name: View GitHub Workspace
         run: |
