@@ -60,7 +60,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: my-artifact
-          path: ${{ steps.export.outputs${{github.workspace}}/ADFroot/ }}
+          path: ${{ steps.export.outputs${{github.workspace}}/ }}
           if-no-files-found: error
           
       - name: View GitHub Workspace
