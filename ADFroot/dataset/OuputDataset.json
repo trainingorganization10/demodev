@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "details_copy3",
+				"fileName": "details_copy4",
 				"folderPath": "Output",
 				"container": "demodevcontainer"
 			}
