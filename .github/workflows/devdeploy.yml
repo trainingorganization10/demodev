@@ -72,7 +72,7 @@ jobs:
           dataFactoryName: ${{ secrets.DEVADF }} # (7) your target ADF name
 
   deploy-qa:
-    if: github.ref == 'refs/heads/qa'
+    if: github.ref == 'refs/heads/dev'
     needs: build
     uses: ./.github/workflows/qa-deployement.yml
   
