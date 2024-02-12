@@ -1,12 +1,15 @@
 name: Dev ADF
 
 on: 
+  workflow_dispatch:
+      
   pull_request:
      types:
       - closed
      branches:
       - dev
-      - qa
+      
+      
 permissions:
       id-token: write
       contents: read
