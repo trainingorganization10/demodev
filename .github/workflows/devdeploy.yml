@@ -47,7 +47,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: ExportedArmTemplate # (5) Artifact name 
-          path: ${{github.workspace}}/ADFroot/build/ExportedArmTemplate
+          
           
       - name: View GitHub Workspace
         run: |
