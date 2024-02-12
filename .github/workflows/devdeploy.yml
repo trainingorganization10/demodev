@@ -44,7 +44,7 @@ jobs:
           path: ${{github.workspace}}/ADFroot/build/ExportedArmTemplate
 
       - name: Download a Build Artifact
-        uses: actions/download-artifact@dev
+        uses: actions/download-artifact@v3.0.2
         with:
           name: ExportedArmTemplate # (5) Artifact name 
           path: ${{github.workspace}}/ADFroot/build/ExportedArmTemplate
