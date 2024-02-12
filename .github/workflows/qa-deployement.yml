@@ -23,16 +23,16 @@ jobs:
         run: npm install
         working-directory: ${{github.workspace}}/ADFroot/build  # (1) provide the folder location of the package.json file
 
+      - name: View GitHub Workspace
+        run: |
+          echo "Contents of GitHub Workspace:"
+          ls -R ${{ github.workspace }}
+      
       - name: Download a Build Artifact
         uses: actions/download-artifact@v3
         with:
           name: ExportedArmTemplate # (5) Artifact name 
           
-          
-      - name: View GitHub Workspace
-        run: |
-          echo "Contents of GitHub Workspace:"
-          ls -R ${{ github.workspace }}
         
       - name: Login via Az module
         uses: azure/login@v1
