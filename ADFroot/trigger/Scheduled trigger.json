@@ -3,17 +3,20 @@
 	"properties": {
 		"annotations": [],
 		"runtimeState": "Started",
+
+
 		"pipeline": {
 			"pipelineReference": {
 				"referenceName": "pipeline1",
 				"type": "PipelineReference"
 			}
 		},
+
 		"type": "TumblingWindowTrigger",
 		"typeProperties": {
 			"frequency": "Hour",
 			"interval": 24,
-			"startTime": "2024-02-12T11:00:00Z",
+			"startTime": "2024-02-12T11:40:00Z",
 			"endTime": "2024-02-15T11:00:00Z",
 			"delay": "00:00:00",
 			"maxConcurrency": 1,
