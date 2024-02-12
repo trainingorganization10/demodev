@@ -1,13 +1,12 @@
 name: Dev ADF
 
-on: 
-  workflow_dispatch:
-      
+on:     
   pull_request:
      types:
       - closed
      branches:
       - dev
+  workflow_dispatch:
       
       
 permissions:
