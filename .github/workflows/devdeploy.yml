@@ -75,10 +75,11 @@ jobs:
           dataFactoryName: ${{ secrets.DEVADF }} # (7) your target ADF name
 
   deploy-qa:
-    if: github.event_name == 'workflow_dispatch' || github.ref == 'refs/heads/dev'
+    if: github.event_name == 'workflow_dispatch' 
     needs: build
-    uses: ./.github/workflows/qa-deployement.yml
-  
-      
-
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger QA Deployment
+        run: echo "Triggering QA Deployment"
+ 
     
