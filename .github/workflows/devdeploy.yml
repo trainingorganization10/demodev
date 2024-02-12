@@ -2,8 +2,8 @@ name: Dev ADF
 
 on: 
   pull_request:
-    types:
-      - closed
+    #types:
+      #- closed
     branches:
       - dev
       
