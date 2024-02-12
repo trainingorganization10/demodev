@@ -22,7 +22,9 @@ jobs:
       run: npm install
       working-directory: ${{github.workspace}}/ADFroot/build  # (1) provide the folder location of the package.json file
 
-    
+    - name: Validate and Generate ARM template
+      run: npm run build export ${{github.workspace}}/ADFroot/ /subscriptions/${{ secrets.AZURE_SUBSCRIPTION_ID }}/resourceGroups/${{ secrets.DEVRESOURCEGROUP }}/providers/Microsoft.DataFactory/factories/${{ secrets.DEVADF }} "ExportedArmTemplate"  # (3) The build command, as validate, needs the root folder location of your repository where all the objects are stored. And the 2nd parameter is the resourceID of the ADF instance. The 3rd parameter is the exported ARM template artifact name 
+      working-directory: ${{github.workspace}}/ADFroot/build 
 
     - name: View GitHub Workspace
       run: |
