@@ -45,5 +45,7 @@ jobs:
         uses: Azure/data-factory-deploy-action@v1.2.0
         with:
           resourceGroupName: ${{ secrets.DEVRESOURCEGROUP }} # (6) your target ADF resource group name
-          dataFactoryName: ${{ secrets.DEVADF }} # (7) your target ADF name
-      
+          dataFactoryName: ${{ secrets.QAADF }} # (7) your target ADF name
+          armTemplateFile: ${{ github.workspace }}/ARMTemplateForFactory.json # (8) ARM template file name ARMTemplateForFactory.json
+          armTemplateParametersFile: ${{github.workspace}}/ARMTemplateParametersForFactory.json # (9) ARM template parameters file name ARMTemplateParametersForFactory.json
+          additionalParameters: 'factoryName=${{ secrets.QAADF }} demodevstr_linkedservice_connectionString=${{ secrets.STORAGE_CONNECTION_STRING_QA }}' # (10) Parameters which will be replaced in the ARM template. Expected format 'key1=value key2=value keyN=value'. At the minimum here you should provide the target ADF name parameter. Check the ARMTemplateParametersForFactory.json file for all the parameters that are expected in your scenario
