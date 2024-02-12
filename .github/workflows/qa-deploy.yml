@@ -35,7 +35,7 @@ jobs:
       uses: actions/download-artifact@v3.0.2
       with:
            #name: ExportedArmTemplate
-           name: ${{github.workspace}}/ADFroot/build/ExportedArmTemplate # (5) Artifact name 
+           name: ExportedArmTemplate # (5) Artifact name 
      
 
     - name: Login via Az module
