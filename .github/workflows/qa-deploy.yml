@@ -22,25 +22,24 @@ jobs:
       run: npm install
       working-directory: ${{github.workspace}}/ADFroot/build  # (1) provide the folder location of the package.json file
 
-    - name: Export ARM Template
-      run: npm run build export ${{github.workspace}}/ADFroot/ /subscriptions/${{ secrets.AZURE_SUBSCRIPTION_ID }}/resourceGroups/${{ secrets.DEVRESOURCEGROUP }}/providers/Microsoft.DataFactory/factories/${{ secrets.DEVADF }} "ExportedArmTemplate"  # (3) The build command, as validate, needs the root folder location of your repository where all the objects are stored. And the 2nd parameter is the resourceID of the ADF instance. The 3rd parameter is the exported ARM template artifact name 
-      working-directory: ${{github.workspace}}/ADFroot/build 
+    #- name: Export ARM Template
+      #run: npm run build export ${{github.workspace}}/ADFroot/ /subscriptions/${{ secrets.AZURE_SUBSCRIPTION_ID }}/resourceGroups/${{ secrets.DEVRESOURCEGROUP }}/providers/Microsoft.DataFactory/factories/${{ secrets.DEVADF }} "ExportedArmTemplate"  # (3) The build command, as validate, needs the root folder location of your repository where all the objects are stored. And the 2nd parameter is the resourceID of the ADF instance. The 3rd parameter is the exported ARM template artifact name 
+      #working-directory: ${{github.workspace}}/ADFroot/build 
 
     - name: View GitHub Workspace
       run: |
           echo "Contents of GitHub Workspace:"
           ls -R ${{ github.workspace }}
           
-    - name: upload artifact
-      uses: actions/upload-artifact@v3
-      with:
-          name: ExportedArmTemplate # (4) use the same artifact name you used in the previous export step
-          path: ${{github.workspace}}/ADFroot/build/ExportedArmTemplate
+    #- name: upload artifact
+      #uses: actions/upload-artifact@v3
+      #with:
+          #name: ExportedArmTemplate # (4) use the same artifact name you used in the previous export step
+          #path: ${{github.workspace}}/ADFroot/build/ExportedArmTemplate
           
     - name: Download a Build Artifact
       uses: actions/download-artifact@v3.0.2
       with:
-           #name: ExportedArmTemplate
            name: ExportedArmTemplate # (5) Artifact name 
      
 
