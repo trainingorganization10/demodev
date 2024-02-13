@@ -7,9 +7,6 @@ permissions:
       contents: read
 
 jobs:
-  build: 
-    uses: ./.github/workflows/devdeploy.yml
-    
   deploy-to-qa:
     runs-on: ubuntu-latest
 
