@@ -1,7 +1,7 @@
 name: Dev ADF
 
 on:     
-  workflow_run:
+  workflow_call:
   pull_request:
      types:
       - closed
