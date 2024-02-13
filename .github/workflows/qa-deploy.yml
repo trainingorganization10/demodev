@@ -2,10 +2,7 @@ name: QA ADF
 
 on: 
   workflow_dispatch:
-  workflow_run:
-    workflows: ["devdeploy"]
-    types:
-      - completed
+  
 
 permissions:
       id-token: write
