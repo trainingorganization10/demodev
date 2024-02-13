@@ -41,7 +41,7 @@ jobs:
       - name: upload artifact
         uses: actions/upload-artifact@v3
         with:
-          name: ExportedArmTemplate # (4) use the same artifact name you used in the previous export step
+          name: ExportedArmTemplate-${{ github.sha }} # (4) use the same artifact name you used in the previous export step
           path: ${{github.workspace}}/ADFroot/build/ExportedArmTemplate
 
   deploy-dev:
@@ -51,7 +51,7 @@ jobs:
       - name: Download a Build Artifact
         uses: actions/download-artifact@v3
         with:
-          name: ExportedArmTemplate # (5) Artifact name 
+          name: ExportedArmTemplate-${{ github.sha }} # (5) Artifact name 
           
           
       - name: View GitHub Workspace
@@ -73,12 +73,4 @@ jobs:
           resourceGroupName: ${{ secrets.DEVRESOURCEGROUP }} # (6) your target ADF resource group name
           dataFactoryName: ${{ secrets.DEVADF }} # (7) your target ADF name
 
-  deploy-qa:
-    if: github.event_name == 'workflow_dispatch' 
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Trigger QA Deployment
-        run: echo "Triggering QA Deployment"
- 
-    
+  
