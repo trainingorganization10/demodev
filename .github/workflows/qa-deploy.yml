@@ -35,8 +35,7 @@ jobs:
       uses: actions/download-artifact@v4
       with:
            name: ExportedArmTemplate # (5) Artifact name 
-           run-id: ${{ github.run_id }}
-
+           
 
     - name: Login via Az module
       uses: azure/login@v1
