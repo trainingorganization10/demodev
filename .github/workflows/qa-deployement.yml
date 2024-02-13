@@ -1,8 +1,5 @@
 name: Deploying to qa
 on:
-  workflow_run:
-    workflows: ["Dev ADF"]
-  workflow_call:
   workflow_dispatch:
       
 permissions:
@@ -33,9 +30,7 @@ jobs:
       - name: Download a Build Artifact
         uses: actions/download-artifact@v3
         with:
-          name: ExportedArmTemplate # (5) Artifact name 
-          path: ${{ github.workspace }}/
-
+          name: ExportedArmTemplate-${{ github.sha }} # (5) Artifact name 
       
       - name: Login via Az module
         uses: azure/login@v1
