@@ -42,7 +42,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ExportedArmTemplate # (4) use the same artifact name you used in the previous export step
-          path: ${{github.workspace}}/ADFroot/build/ExportedArmTemplate
+          path: ADFroot/build/ExportedArmTemplate
 
   deploy-dev:
     needs: build
